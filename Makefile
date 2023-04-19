@@ -5,7 +5,7 @@ exit:
 	 >>> make start"
 	@exit 0
 
-install:
+build:
 	@pip3 install -r requirements.txt
 
 run:

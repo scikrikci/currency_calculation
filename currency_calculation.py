@@ -1,14 +1,6 @@
 import requests, json
 from argparse import ArgumentParser
 
-"""
-    https://exchangeratesapi.io/
-    -f USD
-    -t TRY
-    -a 40
-    python3 config.py -f EUR -t TRY -a 123
-"""
-
 API_KEY = "32XN0MLAatdRWYfVE3M4BlAkCUczVd0l"
 
 
@@ -17,7 +9,7 @@ def main():
 
     to_ = parser_.to_.upper()
     from_ = parser_.from_.upper()
-    amount_ = parser_.amount_
+    amount_ = parser_.amount
 
     print_result(to_, from_, amount_)
 
@@ -50,14 +42,14 @@ def arg_parser():
     )
     arg_parser.add_argument(
         "-f",
-        "--from_",
+        "--from",
         required=False,
         help='From currency, default is "USD"',
         type=str,
         default="USD",
     )
     arg_parser.add_argument(
-        "-a", "--amount_", required=True, help="From currency, default is 1", type=int
+        "-a", "--amount", required=True, help="From currency, default is 1", type=int
     )
 
     return arg_parser.parse_args()
